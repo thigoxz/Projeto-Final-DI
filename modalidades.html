@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modalidades | Raw Academy</title>
+  <!-- Sem login, vai direto para a página de login -->
+  <script src="js/protecao.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/site.css">
   <!-- Aplica tema e fonte salvos antes de renderizar (evita "piscar") -->
@@ -37,7 +39,7 @@
           <li><a href="index.html">Início</a></li>
           <li><a href="modalidades.html" aria-current="page">Modalidades</a></li>
           <li><a href="contato.html">Contato</a></li>
-          <li><a href="login.html">Área do aluno</a></li>
+          <li><a href="painel.html">Área do aluno</a></li>
         </ul>
       </nav>
     </div>
@@ -50,7 +52,7 @@
     <form class="busca" role="search" id="form-busca">
       <div class="campo">
         <label for="busca">Pesquisar modalidade</label>
-        <input type="search" id="busca" placeholder="Ex.: yoga, boxe, spinning">
+        <input type="search" id="busca" placeholder="Ex.: yoga, boxe, cycling">
       </div>
     </form>
 
@@ -77,12 +79,12 @@
       </article>
       <article class="card modalidade" data-categoria="cardio">
         <span class="etiqueta">Cardio</span>
-        <h3>Funcional</h3>
-        <p>Exercícios com o peso do corpo para força, equilíbrio e resistência.</p>
+        <h3>Hyrox</h3>
+        <p>Corrida combinada com estações de exercícios funcionais, no formato das provas de Hyrox.</p>
       </article>
       <article class="card modalidade" data-categoria="cardio">
         <span class="etiqueta">Cardio</span>
-        <h3>Spinning</h3>
+        <h3>Cycling</h3>
         <p>Aula de bicicleta em grupo, com música e variação de ritmo.</p>
       </article>
       <article class="card modalidade" data-categoria="luta">
@@ -120,7 +122,7 @@
           <li><a href="index.html">Início</a></li>
           <li><a href="modalidades.html">Modalidades</a></li>
           <li><a href="contato.html">Contato</a></li>
-          <li><a href="login.html">Área do aluno</a></li>
+          <li><a href="painel.html">Área do aluno</a></li>
         </ul>
       </div>
       <div>

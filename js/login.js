@@ -44,9 +44,9 @@ form.addEventListener('submit', (e) => {
   try {
     if (lembrar.checked) localStorage.setItem('usuarioLembrado', nome);
     else localStorage.removeItem('usuarioLembrado');
-    sessionStorage.setItem('usuario', nome); // o painel usa isso para dar "Olá, <nome>"
+    sessionStorage.setItem('usuario', nome); // as páginas usam isso para saber que o aluno entrou
   } catch (e) {}
 
   msg.textContent = 'Bem-vindo, ' + nome + '! Entrando...';
-  setTimeout(() => { window.location.href = 'painel.html'; }, 800);
+  setTimeout(() => { window.location.href = 'index.html'; }, 800);
 });
