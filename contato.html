@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Raw Academy</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/site.css">
+  <!-- Aplica tema e fonte salvos antes de renderizar (evita "piscar") -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+        document.documentElement.setAttribute('data-tema', t);
+        var f = localStorage.getItem('fonte');
+        if (f) document.documentElement.style.fontSize = f + '%';
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="site">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="acessibilidade" role="toolbar" aria-label="Opções de acessibilidade">
+      <button type="button" id="btn-tema" aria-pressed="false">Modo escuro</button>
+      <button type="button" id="btn-fonte-menos" aria-label="Diminuir fonte">A-</button>
+      <button type="button" id="btn-fonte-mais" aria-label="Aumentar fonte">A+</button>
+    </div>
+    <div class="topo-inner">
+      <a href="index.html" class="logo-topo">
+        <img src="Raw Logo.png" alt="" width="48" height="48"> Raw Academy
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modalidades.html">Modalidades</a></li>
+          <li><a href="contato.html" aria-current="page">Contato</a></li>
+          <li><a href="login.html">Área do aluno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    <h1>Contato</h1>
+    <p class="intro">Tire dúvidas ou agende sua aula experimental gratuita.</p>
+
+    <div class="contato">
+      <section class="card" aria-labelledby="titulo-form">
+        <h2 id="titulo-form" class="sr-only">Formulário de contato</h2>
+        <form id="form-contato" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name"
+                   required aria-describedby="erro-nome">
+            <p class="erro" id="erro-nome" aria-live="polite"></p>
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   required aria-describedby="erro-email">
+            <p class="erro" id="erro-email" aria-live="polite"></p>
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone (opcional)</label>
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+          </div>
+          <div class="campo">
+            <label for="modalidade">Modalidade de interesse</label>
+            <select id="modalidade" name="modalidade" required aria-describedby="erro-modalidade">
+              <option value="">Selecione</option>
+              <option>Musculação</option>
+              <option>Cross Training</option>
+              <option>Funcional</option>
+              <option>Spinning</option>
+              <option>Boxe</option>
+              <option>Muay Thai</option>
+              <option>Yoga</option>
+              <option>Pilates</option>
+            </select>
+            <p class="erro" id="erro-modalidade" aria-live="polite"></p>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required aria-describedby="erro-mensagem"></textarea>
+            <p class="erro" id="erro-mensagem" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn-primario">Enviar</button>
+          <p class="msg-geral" id="msg-geral" role="alert"></p>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="titulo-info">
+        <h2 id="titulo-info" class="sr-only">Informações de contato</h2>
+        <h3>Endereço</h3>
+        <address>Asa Sul, Brasília – DF</address>
+        <h3>Telefone e e-mail</h3>
+        <p>(61) 99999-0000<br>contato@rawacademy.com.br</p>
+        <h3>Horário de funcionamento</h3>
+        <p>Seg a sex: 6h às 23h<br>Sáb: 8h às 14h</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-inner">
+      <div>
+        <h2>Raw Academy</h2>
+        <p>Academia e studio de treinamento.</p>
+      </div>
+      <div>
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modalidades.html">Modalidades</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Área do aluno</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <address>Asa Sul, Brasília – DF<br>(61) 99999-0000<br>contato@rawacademy.com.br</address>
+      </div>
+      <div>
+        <h2>Horários</h2>
+        <p>Seg a sex: 6h às 23h<br>Sáb: 8h às 14h</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Raw Academy – site de demonstração do Projeto Final de Desenvolvimento de Interfaces (CEUB).</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contato.js"></script>
+</body>
+</html>
