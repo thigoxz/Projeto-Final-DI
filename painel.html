@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do aluno | Raw Academy</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/site.css">
+  <!-- Aplica tema e fonte salvos antes de renderizar (evita "piscar") -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+        document.documentElement.setAttribute('data-tema', t);
+        var f = localStorage.getItem('fonte');
+        if (f) document.documentElement.style.fontSize = f + '%';
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="site">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="acessibilidade" role="toolbar" aria-label="Opções de acessibilidade">
+      <button type="button" id="btn-tema" aria-pressed="false">Modo escuro</button>
+      <button type="button" id="btn-fonte-menos" aria-label="Diminuir fonte">A-</button>
+      <button type="button" id="btn-fonte-mais" aria-label="Aumentar fonte">A+</button>
+    </div>
+    <div class="topo-inner">
+      <a href="index.html" class="logo-topo">
+        <img src="Raw Logo.png" alt="" width="48" height="48"> Raw Academy
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modalidades.html">Modalidades</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html" aria-current="page">Área do aluno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    <section class="hero" aria-labelledby="ola">
+      <h1 id="ola">Olá!</h1>
+      <p>Aqui ficam seus treinos, as aulas da semana e os dados do seu plano.</p>
+      <div class="acoes">
+        <button type="button" id="btn-sair" class="btn-secundario">Sair</button>
+      </div>
+    </section>
+
+    <div class="abas" role="tablist" aria-label="Área do aluno">
+      <button type="button" role="tab" id="aba-treinos" aria-controls="painel-treinos" aria-selected="true">Meus treinos</button>
+      <button type="button" role="tab" id="aba-aulas" aria-controls="painel-aulas" aria-selected="false" tabindex="-1">Aulas da semana</button>
+      <button type="button" role="tab" id="aba-plano" aria-controls="painel-plano" aria-selected="false" tabindex="-1">Meu plano</button>
+    </div>
+
+    <div role="tabpanel" id="painel-treinos" aria-labelledby="aba-treinos">
+      <div class="grade">
+        <article class="card">
+          <h3>Treino A – Peito e tríceps</h3>
+          <ul><li>Supino reto – 4x10</li><li>Crucifixo – 3x12</li><li>Tríceps corda – 3x12</li></ul>
+        </article>
+        <article class="card">
+          <h3>Treino B – Costas e bíceps</h3>
+          <ul><li>Puxada frontal – 4x10</li><li>Remada baixa – 3x12</li><li>Rosca direta – 3x12</li></ul>
+        </article>
+        <article class="card">
+          <h3>Treino C – Pernas</h3>
+          <ul><li>Agachamento – 4x10</li><li>Leg press – 3x12</li><li>Cadeira flexora – 3x12</li></ul>
+        </article>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="painel-aulas" aria-labelledby="aba-aulas" hidden>
+      <div class="tabela-wrap card">
+        <table>
+          <caption class="sr-only">Aulas coletivas da semana</caption>
+          <thead><tr><th scope="col">Dia</th><th scope="col">Horário</th><th scope="col">Aula</th><th scope="col">Professor</th></tr></thead>
+          <tbody>
+            <tr><td>Segunda</td><td>7h</td><td>Funcional</td><td>Ana</td></tr>
+            <tr><td>Terça</td><td>19h</td><td>Spinning</td><td>Bruno</td></tr>
+            <tr><td>Quarta</td><td>18h</td><td>Boxe</td><td>Carla</td></tr>
+            <tr><td>Quinta</td><td>7h</td><td>Yoga</td><td>Diego</td></tr>
+            <tr><td>Sexta</td><td>19h</td><td>Muay Thai</td><td>Carla</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="painel-plano" aria-labelledby="aba-plano" hidden>
+      <article class="card">
+        <span class="etiqueta">Ativo</span>
+        <h3>Plano Trimestral</h3>
+        <p class="preco">R$ 109,90 <small>/mês</small></p>
+        <p>Próxima reavaliação física: agende na recepção.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-inner">
+      <div>
+        <h2>Raw Academy</h2>
+        <p>Academia e studio de treinamento.</p>
+      </div>
+      <div>
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="modalidades.html">Modalidades</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Área do aluno</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <address>Asa Sul, Brasília – DF<br>(61) 99999-0000<br>contato@rawacademy.com.br</address>
+      </div>
+      <div>
+        <h2>Horários</h2>
+        <p>Seg a sex: 6h às 23h<br>Sáb: 8h às 14h</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Raw Academy – site de demonstração do Projeto Final de Desenvolvimento de Interfaces (CEUB).</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>
