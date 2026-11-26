@@ -3,165 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Início | Raw Academy</title>
-  <!-- Sem login, vai direto para a página de login -->
-  <script src="js/protecao.js"></script>
+  <title>Raw Academy</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/site.css">
-  <!-- Aplica tema e fonte salvos antes de renderizar (evita "piscar") -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('tema');
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
-        document.documentElement.setAttribute('data-tema', t);
-        var f = localStorage.getItem('fonte');
-        if (f) document.documentElement.style.fontSize = f + '%';
-      } catch (e) {}
-    })();
-  </script>
 </head>
-<body class="site">
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<body>
 
+  <!-- Topo: logo, menu e saudação -->
   <header class="topo">
-    <div class="acessibilidade" role="toolbar" aria-label="Opções de acessibilidade">
-      <button type="button" id="btn-tema" aria-pressed="false">Modo escuro</button>
-      <button type="button" id="btn-fonte-menos" aria-label="Diminuir fonte">A-</button>
-      <button type="button" id="btn-fonte-mais" aria-label="Aumentar fonte">A+</button>
+    <div class="marca">
+      <img src="Raw Logo.png" alt="Logo da Raw Academy" class="logo">
+      <span>Raw Academy</span>
     </div>
-    <div class="topo-inner">
-      <a href="index.html" class="logo-topo">
-        <img src="Raw Logo.png" alt="" width="48" height="48"> Raw Academy
-      </a>
-      <nav aria-label="Menu principal">
-        <ul class="menu">
-          <li><a href="index.html" aria-current="page">Início</a></li>
-          <li><a href="modalidades.html">Modalidades</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="painel.html">Área do aluno</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div>
+      <span id="ola">Olá!</span>
+      <button id="btn-sair">Sair</button>
     </div>
   </header>
 
-  <main id="conteudo" class="conteudo">
-    <!-- Destaque -->
-    <section class="hero" aria-labelledby="titulo-hero">
-      <p class="etiqueta">Brasília – DF</p>
-      <h1 id="titulo-hero">Treine do seu jeito na Raw Academy</h1>
-      <p>Musculação, Hyrox, lutas e aulas coletivas com acompanhamento de professores.
-         Acompanhe seus treinos e aulas pela área do aluno.</p>
-      <div class="acoes">
-        <a href="contato.html" class="btn-primario">Agendar aula experimental</a>
-        <a href="modalidades.html" class="btn-secundario">Ver modalidades</a>
+  <!-- Barra de acessibilidade -->
+  <div class="acessibilidade">
+    <button id="btn-tema">Modo escuro</button>
+    <button id="btn-menos">A-</button>
+    <button id="btn-mais">A+</button>
+  </div>
+
+  <main>
+    <!-- Apresentação -->
+    <section class="destaque">
+      <h1>Treine do seu jeito na Raw Academy</h1>
+      <p>Musculação, Hyrox, lutas e aulas coletivas com acompanhamento de professores.</p>
+    </section>
+
+    <!-- Carrossel de imagens -->
+    <section>
+      <h2>Conheça a academia</h2>
+      <div class="carrossel">
+        <img id="foto" src="musculacao.png" alt="Área de musculação">
+        <p id="legenda">Área de musculação</p>
+        <button id="btn-anterior">Anterior</button>
+        <button id="btn-proximo">Próxima</button>
       </div>
     </section>
 
-    <!-- Carrossel -->
-    <section class="secao" aria-labelledby="titulo-carrossel">
-      <h2 id="titulo-carrossel">Conheça a academia</h2>
-      <div class="carrossel" aria-roledescription="carrossel" aria-label="Fotos da academia">
-        <figure class="slide ativo">
-          <img src="musculacao.png" alt="Ilustração de um halter representando a área de musculação">
-          <figcaption><strong>Área de musculação</strong><span>Equipamentos completos e professores na sala.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <img src="cardio.png" alt="Ilustração de um coração representando as aulas de cardio e Hyrox">
-          <figcaption><strong>Cardio e Hyrox</strong><span>Aulas em grupo para ganhar condicionamento.</span></figcaption>
-        </figure>
-        <figure class="slide">
-          <img src="yoga.png" alt="Ilustração de uma pessoa meditando representando a sala de yoga">
-          <figcaption><strong>Sala de yoga e alongamento</strong><span>Espaço tranquilo para mobilidade e respiração.</span></figcaption>
-        </figure>
-        <div class="carrossel-controles">
-          <button type="button" id="btn-anterior" aria-label="Imagem anterior">‹ Anterior</button>
-          <div class="pontos"></div>
-          <button type="button" id="btn-proximo" aria-label="Próxima imagem">Próxima ›</button>
+    <!-- Modalidades: pesquisa e cartões -->
+    <section id="modalidades">
+      <h2>Modalidades</h2>
+      <input type="text" id="pesquisa" placeholder="Pesquisar modalidade...">
+
+      <div class="cartoes">
+        <div class="cartao">
+          <h3>Musculação</h3>
+          <p>Treino com pesos montado pelo professor para o seu objetivo.</p>
         </div>
-        <p id="carrossel-status" class="sr-only" aria-live="polite"></p>
+        <div class="cartao">
+          <h3>Hyrox</h3>
+          <p>Corrida combinada com exercícios funcionais.</p>
+        </div>
+        <div class="cartao">
+          <h3>Cycling</h3>
+          <p>Aula de bicicleta em grupo, com música.</p>
+        </div>
+        <div class="cartao">
+          <h3>Boxe</h3>
+          <p>Técnica de socos, esquivas e condicionamento.</p>
+        </div>
+        <div class="cartao">
+          <h3>Yoga</h3>
+          <p>Posturas, respiração e relaxamento.</p>
+        </div>
+        <div class="cartao">
+          <h3>Pilates</h3>
+          <p>Fortalecimento do corpo e melhora da postura.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Cartões explicativos -->
-    <section class="secao" aria-labelledby="titulo-como">
-      <h2 id="titulo-como">Como funciona</h2>
-      <p class="intro">Do primeiro contato ao primeiro treino em três passos.</p>
-      <div class="grade">
-        <article class="card">
-          <span class="numero" aria-hidden="true">1</span>
-          <h3>Agende uma aula experimental</h3>
-          <p>Preencha o formulário de contato e escolha a modalidade que quer conhecer.</p>
-        </article>
-        <article class="card">
-          <span class="numero" aria-hidden="true">2</span>
-          <h3>Faça sua avaliação física</h3>
-          <p>Um professor mede seu condicionamento e conversa sobre seus objetivos.</p>
-        </article>
-        <article class="card">
-          <span class="numero" aria-hidden="true">3</span>
-          <h3>Comece a treinar</h3>
-          <p>Seu treino fica disponível na área do aluno, junto com as aulas da semana.</p>
-        </article>
-      </div>
-    </section>
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <form id="form-contato">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
 
-    <!-- Planos -->
-    <section class="secao" aria-labelledby="titulo-planos">
-      <h2 id="titulo-planos">Planos</h2>
-      <p class="intro">Todos os planos dão acesso livre à musculação e às aulas coletivas.</p>
-      <div class="grade">
-        <article class="card">
-          <h3>Mensal</h3>
-          <p class="preco">R$ 129,90 <small>/mês</small></p>
-          <ul><li>Sem fidelidade</li><li>Avaliação física inicial</li></ul>
-          <a href="contato.html" class="btn-primario">Quero este</a>
-        </article>
-        <article class="card destaque">
-          <span class="etiqueta">Mais escolhido</span>
-          <h3>Trimestral</h3>
-          <p class="preco">R$ 109,90 <small>/mês</small></p>
-          <ul><li>3 meses</li><li>Reavaliação a cada mês</li></ul>
-          <a href="contato.html" class="btn-primario">Quero este</a>
-        </article>
-        <article class="card">
-          <h3>Anual</h3>
-          <p class="preco">R$ 89,90 <small>/mês</small></p>
-          <ul><li>12 meses</li><li>1 mês de nutricionista grátis</li></ul>
-          <a href="contato.html" class="btn-primario">Quero este</a>
-        </article>
-      </div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email">
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem"></textarea>
+
+        <p id="aviso-contato"></p>
+        <button type="submit" class="botao">Enviar</button>
+      </form>
     </section>
   </main>
 
+  <!-- Rodapé -->
   <footer class="rodape">
-    <div class="rodape-inner">
-      <div>
-        <h2>Raw Academy</h2>
-        <p>Academia e studio de treinamento.</p>
-      </div>
-      <div>
-        <h2>Navegação</h2>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="modalidades.html">Modalidades</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="painel.html">Área do aluno</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contato</h2>
-        <address>Asa Sul, Brasília – DF<br>(61) 99999-0000<br>contato@rawacademy.com.br</address>
-      </div>
-      <div>
-        <h2>Horários</h2>
-        <p>Seg a sex: 6h às 23h<br>Sáb: 8h às 14h</p>
-      </div>
-    </div>
-    <p class="copy">© 2026 Raw Academy – site de demonstração do Projeto Final de Desenvolvimento de Interfaces (CEUB).</p>
+    <p>Raw Academy – Asa Sul, Brasília – DF</p>
+    <p>(61) 99999-0000 – contato@rawacademy.com.br</p>
+    <p>Seg a sex: 6h às 23h – Sáb: 8h às 14h</p>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/carrossel.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

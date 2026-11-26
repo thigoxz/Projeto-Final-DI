@@ -5,72 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Raw Academy</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Aplica tema e fonte salvos antes de renderizar (evita "piscar") -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('tema');
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
-        document.documentElement.setAttribute('data-tema', t);
-        var f = localStorage.getItem('fonte');
-        if (f) document.documentElement.style.fontSize = f + '%';
-      } catch (e) {}
-    })();
-  </script>
 </head>
-<body>
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<body class="pagina-login">
 
   <!-- Barra de acessibilidade -->
-  <div class="acessibilidade" role="toolbar" aria-label="Opções de acessibilidade">
-    <button type="button" id="btn-tema" aria-pressed="false">Modo escuro</button>
-    <button type="button" id="btn-fonte-menos" aria-label="Diminuir fonte">A-</button>
-    <button type="button" id="btn-fonte-mais" aria-label="Aumentar fonte">A+</button>
+  <div class="acessibilidade">
+    <button id="btn-tema">Modo escuro</button>
+    <button id="btn-menos">A-</button>
+    <button id="btn-mais">A+</button>
   </div>
 
-  <main id="conteudo" class="login">
-    <section class="cartao" aria-labelledby="titulo-login">
-      <img src="Raw Logo.png" alt="Logo da Raw Academy" class="logo" width="120" height="120">
-      <p class="marca">Raw Academy</p>
-      <h1 id="titulo-login">Entrar na sua conta</h1>
-      <p class="sub">Acompanhe treinos, aulas e seu plano.</p>
+  <!-- Cartão de login -->
+  <main class="cartao-login">
+    <img src="Raw Logo.png" alt="Logo da Raw Academy" class="logo-grande">
+    <h1>Entrar na sua conta</h1>
+    <p>Site de demonstração: qualquer usuário e senha entram.</p>
 
-      <form id="form-login" novalidate>
-        <div class="campo">
-          <label for="usuario">Usuário ou e-mail</label>
-          <input type="text" id="usuario" name="usuario" autocomplete="username"
-                 required aria-describedby="erro-usuario">
-          <p class="erro" id="erro-usuario" aria-live="polite"></p>
-        </div>
+    <form id="form-login">
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario">
 
-        <div class="campo">
-          <label for="senha">Senha</label>
-          <div class="senha-wrap">
-            <input type="password" id="senha" name="senha" autocomplete="current-password"
-                   required aria-describedby="erro-senha">
-            <button type="button" id="btn-ver-senha" class="ver-senha"
-                    aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
-          </div>
-          <p class="erro" id="erro-senha" aria-live="polite"></p>
-        </div>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha">
 
-        <div class="linha">
-          <label class="check">
-            <input type="checkbox" id="lembrar"> Lembrar de mim
-          </label>
-          <a href="#" class="link">Esqueci minha senha</a>
-        </div>
-
-        <button type="submit" class="btn-primario">Entrar</button>
-        <p class="msg-geral" id="msg-geral" role="alert"></p>
-      </form>
-
-      <p class="rodape-cartao">Ainda não é aluno? <a href="contato.html" class="link">Agende uma aula experimental</a></p>
-      <p class="rodape-cartao">Site de demonstração: qualquer usuário e senha entram.</p>
-    </section>
+      <p id="erro-login" class="erro"></p>
+      <button type="submit" class="botao">Entrar</button>
+    </form>
   </main>
 
-  <script src="js/main.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
