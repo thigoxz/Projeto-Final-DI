@@ -42,43 +42,89 @@
     <section>
       <h2>Conheça a academia</h2>
       <div class="carrossel">
-        <img id="foto" src="musculacao.png" alt="Área de musculação">
-        <p id="legenda">Área de musculação</p>
-        <button id="btn-anterior">Anterior</button>
-        <button id="btn-proximo">Próxima</button>
+        <img src="musculacao.png" alt="Área de musculação" class="ativa">
+        <img src="cardio.png" alt="Cardio e Hyrox">
+        <img src="yoga.png" alt="Sala de yoga">
+
+        <button id="btn-anterior" class="seta seta-esquerda">‹</button>
+        <button id="btn-proximo" class="seta seta-direita">›</button>
+        <p id="legenda" class="legenda">Área de musculação</p>
       </div>
     </section>
 
     <!-- Modalidades: pesquisa e cartões -->
     <section id="modalidades">
       <h2>Modalidades</h2>
+      <p>Clique em uma modalidade para ver os detalhes.</p>
       <input type="text" id="pesquisa" placeholder="Pesquisar modalidade...">
 
       <div class="cartoes">
-        <div class="cartao">
-          <h3>Musculação</h3>
-          <p>Treino com pesos montado pelo professor para o seu objetivo.</p>
-        </div>
-        <div class="cartao">
-          <h3>Hyrox</h3>
-          <p>Corrida combinada com exercícios funcionais.</p>
-        </div>
-        <div class="cartao">
-          <h3>Cycling</h3>
-          <p>Aula de bicicleta em grupo, com música.</p>
-        </div>
-        <div class="cartao">
-          <h3>Boxe</h3>
-          <p>Técnica de socos, esquivas e condicionamento.</p>
-        </div>
-        <div class="cartao">
-          <h3>Yoga</h3>
-          <p>Posturas, respiração e relaxamento.</p>
-        </div>
-        <div class="cartao">
-          <h3>Pilates</h3>
-          <p>Fortalecimento do corpo e melhora da postura.</p>
-        </div>
+        <details class="cartao">
+          <summary>
+            <img src="musculacao.png" alt="Pessoa treinando musculação" class="foto-cartao">
+            <h3>Musculação</h3>
+            <p>Treino com pesos montado pelo professor para o seu objetivo.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Horário livre, todos os dias, das 6h às 23h.</p>
+          <p><strong>Nível:</strong> Todos os níveis</p>
+          <p><strong>Professor:</strong> Equipe de professores da sala</p>
+        </details>
+        <details class="cartao">
+          <summary>
+            <img src="hyrox.png" alt="Treino de Hyrox" class="foto-cartao">
+            <h3>Hyrox</h3>
+            <p>Corrida combinada com exercícios funcionais.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Segunda e quarta, às 7h e às 19h.</p>
+          <p><strong>Nível:</strong> Intermediário</p>
+          <p><strong>Professor:</strong> Ana</p>
+        </details>
+        <details class="cartao">
+          <summary>
+            <img src="cardio.png" alt="Sala de cycling com bicicletas" class="foto-cartao">
+            <h3>Cycling</h3>
+            <p>Aula de bicicleta em grupo, com música.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Terça e quinta, às 19h.</p>
+          <p><strong>Nível:</strong> Todos os níveis</p>
+          <p><strong>Professor:</strong> Bruno</p>
+        </details>
+        <details class="cartao">
+          <summary>
+            <img src="boxe.png" alt="Treino de boxe" class="foto-cartao">
+            <h3>Boxe</h3>
+            <p>Técnica de socos, esquivas e condicionamento.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Quarta e sexta, às 18h.</p>
+          <p><strong>Nível:</strong> Iniciante e intermediário</p>
+          <p><strong>Professor:</strong> Carla</p>
+        </details>
+        <details class="cartao">
+          <summary>
+            <img src="yoga.png" alt="Sala de yoga" class="foto-cartao">
+            <h3>Yoga</h3>
+            <p>Posturas, respiração e relaxamento.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Quinta, às 7h, e sábado, às 9h.</p>
+          <p><strong>Nível:</strong> Todos os níveis</p>
+          <p><strong>Professor:</strong> Diego</p>
+        </details>
+        <details class="cartao">
+          <summary>
+            <img src="pilates.png" alt="Aula de pilates" class="foto-cartao">
+            <h3>Pilates</h3>
+            <p>Fortalecimento do corpo e melhora da postura.</p>
+            <span class="ver-mais">Ver detalhes</span>
+          </summary>
+          <p><strong>Horários:</strong> Terça e quinta, às 8h.</p>
+          <p><strong>Nível:</strong> Todos os níveis</p>
+          <p><strong>Professor:</strong> Diego</p>
+        </details>
       </div>
     </section>
 

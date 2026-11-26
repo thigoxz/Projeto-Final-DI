@@ -25,7 +25,7 @@ body {
 }
 
 main {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -109,17 +109,57 @@ input, textarea {
 
 /* ===== Carrossel ===== */
 .carrossel {
-  background: var(--cartao);
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
+  position: relative;
+  height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
+/* As 3 fotos ficam uma em cima da outra; só a "ativa" aparece */
 .carrossel img {
+  position: absolute;
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.carrossel img.ativa { opacity: 1; }
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+}
+
+.seta-esquerda { left: 1rem; }
+.seta-direita { right: 1rem; }
+
+.legenda {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Em telas pequenas, o carrossel fica mais baixo */
+@media (max-width: 600px) {
+  .carrossel { height: 250px; }
 }
 
 /* ===== Cartões ===== */
@@ -127,6 +167,7 @@ input, textarea {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+  align-items: start;
 }
 
 .cartao {
@@ -135,6 +176,30 @@ input, textarea {
   border-radius: 10px;
   border-left: 5px solid var(--roxo);
 }
+
+/* Foto no topo de cada cartão */
+.foto-cartao {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Parte clicável do cartão */
+.cartao summary {
+  cursor: pointer;
+  list-style: none; /* tira a setinha padrão */
+}
+
+.cartao summary::-webkit-details-marker { display: none; } /* tira a setinha no Safari */
+
+.ver-mais {
+  color: var(--roxo);
+  font-weight: bold;
+}
+
+/* Quando o cartão está aberto, esconde o "Ver detalhes" */
+.cartao[open] .ver-mais { display: none; }
 
 /* ===== Contato ===== */
 #form-contato {

@@ -66,22 +66,28 @@ if (ola) {
     window.location.href = 'login.html';
   });
 
-  // Carrossel
-  const fotos = ['musculacao.png', 'cardio.png', 'yoga.png'];
-  const legendas = ['Área de musculação', 'Cardio e Hyrox', 'Sala de yoga'];
+  // Carrossel: troca de foto sozinho a cada 4 segundos
+  const fotos = document.querySelectorAll('.carrossel img');
+  const legenda = document.getElementById('legenda');
   let atual = 0;
 
   function mostrarFoto() {
-    document.getElementById('foto').src = fotos[atual];
-    document.getElementById('foto').alt = legendas[atual];
-    document.getElementById('legenda').textContent = legendas[atual];
+    fotos.forEach(function (foto) {
+      foto.classList.remove('ativa');
+    });
+    fotos[atual].classList.add('ativa');
+    legenda.textContent = fotos[atual].alt;
   }
 
-  document.getElementById('btn-proximo').addEventListener('click', function () {
+  function proximaFoto() {
     atual = atual + 1;
     if (atual === fotos.length) atual = 0; // volta para a primeira
     mostrarFoto();
-  });
+  }
+
+  setInterval(proximaFoto, 4000); // troca a foto a cada 4 segundos
+
+  document.getElementById('btn-proximo').addEventListener('click', proximaFoto);
 
   document.getElementById('btn-anterior').addEventListener('click', function () {
     atual = atual - 1;
