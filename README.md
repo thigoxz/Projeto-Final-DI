@@ -1,6 +1,6 @@
 # Raw Academy – Projeto Final de Desenvolvimento de Interfaces
 
-Site de demonstração de uma academia/studio, feito com HTML, CSS e JavaScript puros (sem frameworks).
+Site de demonstração de uma academia, feito com HTML, CSS e JavaScript puros.
 
 **Aluno:** Thiago Seabra Aquino da Silva – RA 22600589
 
@@ -8,46 +8,27 @@ Site de demonstração de uma academia/studio, feito com HTML, CSS e JavaScript 
 
 ## Como abrir
 1. Abra a pasta no VS Code.
-2. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
-3. O site abre no login. Entre com qualquer usuário e senha.
+2. Clique com o botão direito em `login.html` e escolha **Open with Live Server**.
+3. Entre com qualquer usuário e senha.
 
-## Páginas
-| Página | O que tem |
+## Arquivos
+| Arquivo | O que faz |
 |---|---|
-| `login.html` | Login de demonstração (qualquer usuário e senha), mostrar senha, "Lembrar de mim" |
-| `index.html` | Destaque, carrossel de imagens, cartões explicativos ("Como funciona") e planos |
-| `modalidades.html` | Campo de pesquisa e abas de categoria que filtram os cartões |
-| `contato.html` | Formulário de contato com validação (aberto mesmo sem login) |
-| `painel.html` | Área do aluno: saudação, abas (treinos, aulas, plano) e botão Sair |
+| `login.html` | Página de login (qualquer usuário e senha entram) |
+| `index.html` | Página principal: carrossel, modalidades, contato e rodapé |
+| `css/style.css` | Cores (modo claro e escuro) e aparência do site |
+| `js/script.js` | Modo escuro, tamanho da fonte, login, carrossel, pesquisa e contato |
 
-Todas as páginas têm a barra de acessibilidade (modo claro/escuro e tamanho da fonte), e as páginas do site têm rodapé.
+## Funcionalidades
+- Login obrigatório para ver a página principal
+- Carrossel de fotos que troca sozinho a cada 4 segundos
+- Cartões de modalidades com foto, que abrem com um clique e mostram os detalhes
+- Pesquisa de modalidades
+- Formulário de contato com validação
+- Modo claro/escuro e botões para aumentar e diminuir a fonte
 
-## Estrutura
-```
-css/style.css    variáveis de cor, base e login
-css/site.css     estilos das páginas do site
-js/main.js       tema e fonte (todas as páginas)
-js/login.js      login
-js/protecao.js   manda para o login quem ainda não entrou
-js/carrossel.js  carrossel
-js/busca.js      pesquisa e abas das modalidades
-js/contato.js    validação do formulário
-js/painel.js     área do aluno
-img/             imagens do carrossel
-```
-
-## Versões
-1. **Login:** página de login com modo claro/escuro e ajuste de fonte.
-2. **Estilos e imagens:** estilos das páginas do site e imagens do carrossel.
-3. **Página inicial:** destaque, carrossel, cartões e planos.
-4. **Modalidades:** pesquisa e abas de categoria.
-5. **Contato:** formulário com validação.
-6. **Área do aluno:** abas de treinos, aulas e plano; login obrigatório.
-7. **Documentação:** este README.
-
-## Acessibilidade (WCAG)
-- Contraste mínimo de 4,5:1 nos textos, nos dois temas
-- Navegação por teclado, foco visível e link "Pular para o conteúdo"
-- Erros e mudanças anunciados com `aria-live`
-- Carrossel controlado pelo usuário (não troca sozinho)
-- Tema e tamanho de fonte salvos no `localStorage`
+## Evolução do projeto
+1. Página de login
+2. Site completo com 5 páginas (início, modalidades, contato e área do aluno)
+3. Simplificação: login e uma página principal
+4. Carrossel automático, cartões clicáveis e fotos nas modalidades
